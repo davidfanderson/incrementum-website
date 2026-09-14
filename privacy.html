@@ -1,0 +1,68 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Privacy Policy · Incrementum</title>
+  <meta name="description" content="Incrementum Privacy Policy">
+  <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+<header>
+  <nav class="nav">
+    <a class="brand" href="index.html">Incrementum</a>
+    <div class="nav-links">
+      <a href="privacy.html">Privacy</a>
+      <a href="support.html">Support</a>
+    </div>
+  </nav>
+</header>
+
+<main>
+  <h1>Privacy Policy</h1>
+  <p class="meta">Effective September 2, 2026</p>
+
+  <div class="promise"><strong>Core promise:</strong> Raw GPS coordinates and route shapes stay in the app's private storage on the device. They are not uploaded to Incrementum's backend. The app does upload derived affected hex-cell identifiers, which can reveal the geographic areas in which an activity occurred.</div>
+
+  <h2>Information Incrementum processes</h2>
+  <ul>
+    <li><strong>Account information:</strong> Email address, authentication identifier, display name, and selected empire color. Passwords are handled by Supabase Auth and are not readable by the app developer.</li>
+    <li><strong>Activity summaries:</strong> Activity type (walk, run, or bike), start and end times, active and paused durations, total distance, eligible standard-distance record times, and territory/game outcomes.</li>
+    <li><strong>Derived location information:</strong> Identifiers for H3 map cells affected by an activity. These are not latitude/longitude coordinates or a route polyline, but they can indicate fine-grained areas visited.</li>
+    <li><strong>Shared game information:</strong> Display name, empire color, public player identifier, territory ownership, reinforcements, and defense values.</li>
+    <li><strong>Operational information:</strong> Service providers may process ordinary network metadata such as IP address, request time, device or client information, security cookies, and error logs to deliver, operate, and protect the service.</li>
+  </ul>
+
+  <h2>Information kept only on the device</h2>
+  <p>While an activity is recording, accepted GPS samples are kept in a temporary private cache so the app can calculate distance, route geometry, territory effects, and records. The route remains local through the Save-or-Delete review. Saving submits or queues only the derived data described above, then deletes the raw route cache. Deleting the activity removes the raw route without submitting it.</p>
+  <p>A small route thumbnail may remain privately on the device for activity history. Pending derived submissions and privacy acknowledgments may also be stored locally.</p>
+
+  <h2>How information is used</h2>
+  <p>Information is used to create and secure accounts, restore sessions, calculate and display private progress, synchronize activities, operate the shared territory game, prevent duplicate submissions, provide account deletion, diagnose failures, and protect the service.</p>
+  <p>Incrementum does not use advertising SDKs, does not sell personal information, and does not track users across other companies' apps or websites.</p>
+
+  <h2>Service providers</h2>
+  <p>Incrementum uses Supabase for authentication, database storage, server functions, and related backend services. On iOS, standard maps are provided through Apple's mapping services. This website is delivered through Cloudflare infrastructure. These providers may process information under their own terms and privacy policies while supplying their services.</p>
+
+  <h2>Retention and deletion</h2>
+  <p>Server-side account, activity, record, and territory data is retained while the account exists. Hiding an activity from the Progress list does not reverse territory effects or delete a personal record earned by that activity.</p>
+  <p>The in-app <strong>Delete account and data</strong> control permanently deletes the authentication account and cascades through the profile, activity history, personal records, territory, and related game data. It also removes account-scoped queued activities, route thumbnails, and disclosure state from that device.</p>
+  <p>Raw route data remains only until the user saves or deletes the pending activity, subject to crash-recovery storage needed to preserve that decision.</p>
+
+  <h2>Security and choices</h2>
+  <p>Incrementum uses encrypted network connections, account-bound authorization, private database policies, and device-protected session storage. No system can guarantee absolute security.</p>
+  <p>Users can decline location permission, stop using the app, hide individual history entries, sign out on one device, or permanently delete the account in the Account screen.</p>
+
+  <h2>Children</h2>
+  <p>Incrementum is not directed to children under 13. A parent or guardian should not create an account for a child under 13 during this beta.</p>
+
+  <h2>Changes and contact</h2>
+  <p>This policy may be updated as the beta changes. The effective date above will be revised when material changes are made.</p>
+  <p>For privacy questions or support, see the <a href="support.html">Incrementum Support page</a>.</p>
+</main>
+<footer>
+  <div>© 2026 WMJ Ventures LLC · <a href="privacy.html">Privacy</a> · <a href="support.html">Support</a></div>
+</footer>
+
+</body>
+</html>
