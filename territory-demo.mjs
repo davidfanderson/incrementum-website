@@ -194,7 +194,7 @@ function mountDemo() {
     document.getElementById('owned-count').textContent = String([...tiles.values()].filter(tile => tile.ownerId === PLAYER).length);
     document.getElementById('rival-count').textContent = String([...tiles.values()].filter(tile => tile.ownerId === RIVAL).length);
     document.getElementById('activity-count').textContent = String(step);
-    document.getElementById('route-preview').textContent = !route.length ? 'Choose a starting hex, or load an example below.' : step >= MAX_ACTIVITIES ? 'Reset the map to play more activities.' : `Next activity: ${describeEffects(playRoute(tiles, route, step + 1))}.`;
+    document.getElementById('route-preview').textContent = step >= MAX_ACTIVITIES ? 'Reset the map to play more activities.' : !route.length ? 'Choose a starting hex, or load an example below.' : `Next activity: ${describeEffects(playRoute(tiles, route, step + 1))}.`;
     setFocus(focusIndex);
   }
   function selectCell(index) {
@@ -211,7 +211,9 @@ function mountDemo() {
     const update = playRoute(tiles, route, ++step);
     tiles = update.tiles;
     const analysis = analyzeRoute(route);
-    result.textContent = `Activity ${step}: ${describeEffects(update)}. ${hexCount(analysis.traversed.length)} on the route + ${hexCount(analysis.interior.length)} inside loops. Each hex counted once.${step === MAX_ACTIVITIES ? ' Reset the map to play again.' : ' Run it again or change your route.'}`;
+    result.textContent = `Activity ${step}: ${describeEffects(update)}. ${hexCount(analysis.traversed.length)} on the route + ${hexCount(analysis.interior.length)} inside loops. Each hex counted once.${step === MAX_ACTIVITIES ? ' Reset the map to play again.' : ' Choose any hex to start your next route.'}`;
+    route = [];
+    feedback.textContent = step === MAX_ACTIVITIES ? 'Route cleared. Reset the map to play more activities.' : 'Route cleared. Choose any hex to start a new route.';
     render();
   });
   undo.addEventListener('click', () => { route = route.slice(0, -1); render(); feedback.textContent = 'Last step removed. Your territory is unchanged.'; });
