@@ -14,3 +14,18 @@
 @media(max-width:800px){.hero{grid-template-columns:1fr;padding-top:45px;gap:25px}.hero-copy{max-width:680px}.hero-map{width:min(520px,100%);margin:15px auto 0;transform:none}.hero-map figcaption{transform:none}.feature-grid{gap:24px}.privacy-panel{gap:30px}.demo-layout{grid-template-columns:1fr}.demo-map-panel{max-width:680px}.demo-controls{max-width:680px}}
 @media(max-width:560px){.site-nav,main,.site-footer{width:calc(100% - 32px)}.site-nav{align-items:flex-start;flex-direction:column;gap:14px;padding:16px 0}.nav-links{gap:20px}.nav-links a{font-size:.9rem}.hero{padding-top:32px}h1{font-size:2.65rem}.feature-grid,.privacy-panel{grid-template-columns:1fr;gap:25px}.section{padding:35px 0;margin-top:22px}.feature-number{margin-bottom:12px}.actions{gap:18px}.steps article{grid-template-columns:35px 1fr;gap:7px}.steps h2{font-size:1.55rem}.page-heading{padding-top:40px}.demo-map-panel{padding:20px 12px}.legend{gap:12px}.footer-links{gap:20px}}
 @media(prefers-reduced-motion:reduce){*{scroll-behavior:auto!important}}
+
+/* Public legal/support pages: narrow comfortable reading measure and iPhone spacing. */
+.policy-content{max-width:760px;padding-bottom:68px;overflow-wrap:anywhere}
+.policy-content h2{font-size:clamp(1.35rem,3.7vw,1.65rem);line-height:1.28}
+.policy-content p,.policy-content li{line-height:1.75}
+.policy-content ul,.policy-content ol{padding-left:1.4rem}
+.policy-content .promise{border-radius:0 10px 10px 0}
+.support-note{background:#e4ece2;border-left:3px solid var(--green);padding:13px 18px;border-radius:0 9px 9px 0}
+@media(max-width:560px){
+  .policy-content{padding-top:32px;padding-bottom:55px}
+  .policy-content h1{font-size:2.35rem;line-height:1.14}
+  .policy-content h2{margin-top:28px}
+  .policy-content .promise{padding:16px 17px;margin:22px 0}
+  .policy-content ul,.policy-content ol{padding-left:1.25rem}
+}
